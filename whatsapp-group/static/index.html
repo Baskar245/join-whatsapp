@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Secure WhatsApp Group Join</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      font-family: 'Segoe UI', sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      background: #ffffff;
+      padding: 30px 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333333;
+      font-size: 1.5rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #0072ff;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #0072ff, #00c6ff);
+    }
+
+    #message {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    #message a {
+      color: #25D366;
+      text-decoration: none;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🔒 Enter Your Phone Number to join whatsapp group</h2>
+    <input type="text" id="phone" placeholder="Enter 10-digit number " />
+    <button onclick="verify()">Submit</button>
+    <div id="message"></div>
+  </div>
+
+  <script>
+    function verify() {
+      const input = document.getElementById("phone").value.trim();
+      const allowedNumbers = ["8667860505", "7305375738", "9042929481", "9080896306", "9345668972"];
+      const groupLink = "https://chat.whatsapp.com/DmPXx6iRm5L2lDHyhhrhAQ";
+
+      if (allowedNumbers.includes(input)) {
+        document.getElementById("message").innerHTML = `<a href="${groupLink}" target="_blank">✅ Tap here to join the WhatsApp Group</a>`;
+        document.getElementById("message").style.color = "green";
+      } else {
+        // Redirect to the new plain error page
+        window.location.href = "error.html";
+      }
+    }
+  </script>
+</body>
+</html>
+s
